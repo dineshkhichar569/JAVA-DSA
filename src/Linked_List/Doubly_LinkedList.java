@@ -118,7 +118,7 @@ public class Doubly_LinkedList {
 
         list.insertLast(100);
 
-        list.insert(333, 3);
+        list.insert(333, 5);
 
         list.display();
     }
