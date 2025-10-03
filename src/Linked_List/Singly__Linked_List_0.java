@@ -132,6 +132,87 @@ public class Singly__Linked_List_0 {
         return null;
     }
 
+    public void reverseGroup(){
+        int k = 2;
+        Node past = null;
+        Node present = head;
+        Node future = present.next;
+        while(k != 0){
+            present.next = past;
+            past = present;
+            present = future;
+            if(future != null){
+                future = future.next;
+            }
+            k--;
+        }
+    }
+
+    public void reverse(int k) {
+        Node node = head;
+        int length = 0;
+        while(node != null){
+            node = node.next;
+            length++;
+        }
+        System.out.println(length);
+
+        k = k % length;
+
+        Node past = null;
+        Node present = head;
+        Node future = present.next;
+        while(present != null){
+            present.next = past;
+            past = present;
+            present = future;
+            if(future != null){
+                future = future.next;
+            }
+        }
+
+
+
+        Node h1 = null;
+        Node curr = past;
+        while(curr != null && k != 0){
+            Node n = curr.next;
+            curr.next = h1;
+            h1 = curr;
+            curr = n;
+
+            k--;
+        }
+
+        Node h2 = null;
+        Node curr2 = curr;
+        while(curr2 != null){
+            Node n = curr2.next;
+            curr2.next = h2;
+            h2 = curr2;
+            curr2 = n;
+        }
+
+        Node newNode = new Node(0);
+        Node dummyNode = newNode;
+
+        while(h1 != null){
+            dummyNode.next = h1;
+            h1 = h1.next;
+            dummyNode = dummyNode.next;
+        }
+
+        while(h2 != null){
+            dummyNode.next = h2;
+            h2 = h2.next;
+            dummyNode = dummyNode.next;
+        }
+
+
+
+        head = newNode.next;
+    }
+
     public void display(){
         Node temp = head;
         while(temp != null){
@@ -159,33 +240,39 @@ public class Singly__Linked_List_0 {
     public static void main(String[] args) {
         Singly__Linked_List_0 list = new Singly__Linked_List_0();
 
-        list.insertFirst(10);
-        list.insertFirst(20);
-        list.insertFirst(30);
-        list.insertFirst(40);
-        list.insertFirst(50);
-        list.insertFirst(60);
+//        list.insertFirst(5);
+//        list.insertFirst(4);
+        list.insertFirst(2);
+        list.insertFirst(1);
+        list.insertFirst(0);
+//        list.insertFirst(60);
 
-        list.insertLast(100);
+//        list.insertLast(100);
 
-        list.insert(90, 3);
+//        list.insert(90, 3);
+//
+//        list.display();
+//
+//        System.out.println(list.deletionFirst());
+//        list.display();
+//
+//        System.out.println(list.deletionLast());
+//        list.display();
 
+//        list.insertLast(4);
+//        list.insertLast(5);
+//        list.insertLast(1);
+//        list.insertLast(9);
+//
+//        list.display();
+
+//        System.out.println(list.delete(2));
         list.display();
 
-        System.out.println(list.deletionFirst());
-        list.display();
+//        list.reverseGroup();
+//        list.display();
 
-        System.out.println(list.deletionLast());
-        list.display();
-
-        list.insertLast(4);
-        list.insertLast(5);
-        list.insertLast(1);
-        list.insertLast(9);
-
-        list.display();
-
-        System.out.println(list.delete(2));
+        list.reverse(4);
         list.display();
 
     }
