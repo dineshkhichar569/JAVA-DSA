@@ -61,7 +61,7 @@ Each problem includes:
 └── MonotonicStack/
 ```
 
--Each folder contains problem solutions organized by topic, with clean, commented Java implementations.
+- Each folder contains problem solutions organized by topic, with clean, commented Java implementations.
 
 ---
 
