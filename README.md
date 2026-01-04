@@ -55,7 +55,6 @@ Each problem includes:
 ├── Simulation/
 ├── Math/
 ├── BinarySearch/
-├── HashTable/
 ├── Backtracking/
 ├── DynamicProgramming/
 └── MonotonicStack/
