@@ -52,7 +52,6 @@ Each problem includes:
 ├── Stack/
 ├── String/
 ├── Matrix/
-├── Simulation/
 ├── Math/
 ├── BinarySearch/
 ├── Backtracking/
